@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="KGk-i7-Jjw" customClass="SettingCell" customModule="Travel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBz-1s-dKo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplane" translatesAutoresizingMaskIntoConstraints="NO" id="cmF-UG-kjT">
+                                <rect key="frame" x="8" y="17" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Uqa-Bz-vv9"/>
+                                    <constraint firstAttribute="height" constant="30" id="kqj-hT-WZd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvb-25-fKb">
+                                <rect key="frame" x="46" y="21.5" width="238" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward" translatesAutoresizingMaskIntoConstraints="NO" id="g0x-pL-9vQ">
+                                <rect key="frame" x="292" y="22" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Szg-0Z-3MP"/>
+                                    <constraint firstAttribute="width" constant="20" id="rcB-bh-Dvk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g0x-pL-9vQ" firstAttribute="centerY" secondItem="cmF-UG-kjT" secondAttribute="centerY" id="3mr-b3-9OY"/>
+                            <constraint firstItem="cmF-UG-kjT" firstAttribute="centerY" secondItem="lBz-1s-dKo" secondAttribute="centerY" id="3ze-Ns-izA"/>
+                            <constraint firstItem="Cvb-25-fKb" firstAttribute="centerY" secondItem="cmF-UG-kjT" secondAttribute="centerY" id="CMk-AN-gzW"/>
+                            <constraint firstItem="Cvb-25-fKb" firstAttribute="leading" secondItem="cmF-UG-kjT" secondAttribute="trailing" constant="8" id="G9M-uX-8X8"/>
+                            <constraint firstAttribute="trailing" secondItem="g0x-pL-9vQ" secondAttribute="trailing" constant="8" id="R2n-XM-yuC"/>
+                            <constraint firstItem="cmF-UG-kjT" firstAttribute="leading" secondItem="lBz-1s-dKo" secondAttribute="leading" constant="8" id="s96-77-0EW"/>
+                            <constraint firstItem="g0x-pL-9vQ" firstAttribute="leading" secondItem="Cvb-25-fKb" secondAttribute="trailing" constant="8" id="u2m-04-cOs"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lBz-1s-dKo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ATB-fB-bLf"/>
+                    <constraint firstAttribute="trailing" secondItem="lBz-1s-dKo" secondAttribute="trailing" id="El2-P8-Woz"/>
+                    <constraint firstItem="lBz-1s-dKo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YpA-to-AG8"/>
+                    <constraint firstAttribute="bottom" secondItem="lBz-1s-dKo" secondAttribute="bottom" id="slG-ZO-U55"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgSetting" destination="cmF-UG-kjT" id="szI-yW-Bpi"/>
+                <outlet property="nameSetting" destination="Cvb-25-fKb" id="r4I-6p-rDZ"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="101"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="airplane" width="86" height="86"/>
+        <image name="forward" width="50" height="50"/>
+    </resources>
+</document>
