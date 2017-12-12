@@ -96,6 +96,16 @@ class DetailTourVC: UIViewController {
         self.lbTime.text = "\((tour?.startDate)!)-\((tour?.finishDate)!)"
         self.lbMoney.text = "\((tour?.price)!) VNĐ"
         self.lbLocation.text = "\((tour?.title)!)"
+        
+        
+        //set action for lb place
+        lbLocation.isUserInteractionEnabled = true
+        let tapPlace = UITapGestureRecognizer(target: self, action: #selector(tapLbLocation(sender:)))
+        tapPlace.numberOfTapsRequired = 1
+        tapPlace.numberOfTouchesRequired = 1
+        lbLocation.addGestureRecognizer(tapPlace)
+        
+        
         let vote = (tour?.vote)!
         switch vote {
         case 5:
@@ -144,6 +154,11 @@ class DetailTourVC: UIViewController {
     }
     @objc func didTap() {
         slideShow.presentFullScreenController(from: self)
+    }
+    @objc func tapLbLocation(sender:Any){
+        let placeDetail = DetailPlaceVC()
+        placeDetail.place = self.place
+        self.navigationController?.pushViewController(placeDetail, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "Chi tiết"

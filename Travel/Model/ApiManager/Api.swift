@@ -8,7 +8,7 @@
 
 import Foundation
 struct API{
-    static let domain = "http://192.168.1.27/Travel"
+    static let domain = "http://10.10.42.255/Travel"
     static let imageSource = "\(API.domain)/Image"
     //get all tour
     static let API_GETALLTOUR = "\(API.domain)/getAllTour.php"
@@ -17,4 +17,6 @@ struct API{
     static let API_GETHOTEL = "\(API.domain)/getHotel.php"
     static let API_GETPLACE = "\(API.domain)/getPlace.php"
     static let API_GETTRANS = "\(API.domain)/getTrans.php"
+    static let API_GETFAVOR = "\(API.domain)/getFavorTour.php"
+    static let API_GETBOOKEDTOUR = "\(API.domain)/getBookedTour.php"
 }

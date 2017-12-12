@@ -168,6 +168,11 @@ extension SearchTourViewController:UICollectionViewDelegate,UICollectionViewDele
             tourDetail.tour = tours?[indexPath.item]
             self.navigationController?.pushViewController(tourDetail, animated: true)
         }
+        if textCheck == "Place"{
+            let placeDetail = DetailPlaceVC()
+            placeDetail.place = places?[indexPath.item]
+            self.navigationController?.pushViewController(placeDetail, animated: true)
+        }
     }
 }
 extension SearchTourViewController:UICollectionViewDataSource{
@@ -186,7 +191,6 @@ extension SearchTourViewController:UICollectionViewDataSource{
         }
         return 0
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: indexPath) as? PlaceCell {
             if textCheck == "Tour"{
