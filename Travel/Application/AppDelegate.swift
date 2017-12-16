@@ -12,11 +12,41 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var favoriteTours:[FavoriteTour] = []
+    var bookedTours:[BookedTour] = []
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        getFavorTours()
         return true
+    }
+    func getFavorTours(){
+        let userID = UserDefaults.standard.string(forKey: "userID")
+        if userID != nil{
+            if userID! != ""{
+                print("get favorite tour")
+                FavoriteTourService.share.getFavoriteTour(userID: userID!, completion: { (success, favorTours) in
+                    if success {
+                        DispatchQueue.main.async {
+                            self.favoriteTours = favorTours
+                        }
+                    }
+                })
+            }
+        }
+    }
+    func getBookedTour(){
+        let userID = UserDefaults.standard.string(forKey: "userID")
+        if userID != nil{
+            if userID! != ""{
+                print("get favorite tour")
+                BookedTourService.share.getBookedTour(userID: userID!, completion: { (success, tours) in
+                    if success{
+                        self.bookedTours = tours
+                    }
+                })
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

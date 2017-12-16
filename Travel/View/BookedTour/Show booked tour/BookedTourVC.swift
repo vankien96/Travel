@@ -64,10 +64,12 @@ extension BookedTourVC:UICollectionViewDelegate,UICollectionViewDelegateFlowLayo
         return CGSize(width: self.view.bounds.width-32, height: 150)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let tour = tours[indexPath.item]
-        let detailTour = DetailTourVC()
-        detailTour.tour = tour
-        self.navigationController?.pushViewController(detailTour, animated: true)
+        if tours.count > indexPath.item{
+            let tour = tours[indexPath.item]
+            let detailTour = DetailTourVC()
+            detailTour.tour = tour
+            self.navigationController?.pushViewController(detailTour, animated: true)
+        }
     }
 }
 extension BookedTourVC:UICollectionViewDataSource{

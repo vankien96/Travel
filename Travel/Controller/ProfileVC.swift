@@ -60,6 +60,8 @@ class ProfileVC: UIViewController {
             userAddressTxt.text = user.address
             phoneTxt.text = user.phone
         }
+        btnLogOut.layer.cornerRadius = 5.0
+        btnLogOut.layer.masksToBounds = true
     }
     @IBAction func clickOnButtonLogOut(_ sender: Any) {
         self.delegate?.logout()

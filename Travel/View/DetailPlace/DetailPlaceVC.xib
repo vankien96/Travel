@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailPlaceVC" customModule="Travel" customModuleProvider="target">
             <connections>
+                <outlet property="imgDetial" destination="mfL-US-8LD" id="cQN-vm-bHv"/>
                 <outlet property="lbLocation" destination="lts-U0-QLL" id="YJu-JK-rLg"/>
                 <outlet property="slideShow" destination="gjn-df-wR2" id="7kb-M8-SJH"/>
                 <outlet property="textViewDetail" destination="xne-vm-wHJ" id="967-mH-g5K"/>
@@ -25,11 +26,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjn-df-wR2" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                    <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                    <rect key="frame" x="0.0" y="64" width="320" height="200"/>
                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="NS5-ca-Y5m"/>
@@ -43,13 +44,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lts-U0-QLL">
-                    <rect key="frame" x="44" y="273.5" width="331" height="17.5"/>
+                    <rect key="frame" x="44" y="273.5" width="276" height="17.5"/>
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                    <color key="textColor" red="0.40194195510000003" green="0.53989988570000003" blue="0.26145994659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.3943963647" green="0.73489862679999995" blue="0.49988007550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xne-vm-wHJ">
-                    <rect key="frame" x="16" y="299" width="343" height="368"/>
+                    <rect key="frame" x="16" y="299" width="288" height="269"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

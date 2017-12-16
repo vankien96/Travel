@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8DBF61C67810930E7365A6D2 /* Pods_Travel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33633D7EF9CFD10C2E77D96 /* Pods_Travel.framework */; };
+		EF0740381FE5705A0025D0C3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0740371FE5705A0025D0C3 /* UIImageViewExtension.swift */; };
 		EF0D7BDC1FD96F29003EC340 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D7BD91FD96F29003EC340 /* UIViewExt.swift */; };
 		EF0D7BDD1FD96F29003EC340 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D7BDA1FD96F29003EC340 /* UIButtonExt.swift */; };
 		EF0D7BDE1FD96F29003EC340 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D7BDB1FD96F29003EC340 /* UIViewControllerExt.swift */; };
@@ -61,6 +62,8 @@
 		EF7CDBAC1FDA47D500C22FAF /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CDBAB1FDA47D500C22FAF /* Setting.swift */; };
 		EFD2B8471FDB119900053279 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2B8461FDB119900053279 /* Api.swift */; };
 		EFD2B8491FDB130000053279 /* TourService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2B8481FDB130000053279 /* TourService.swift */; };
+		EFD5D4111FE55D03002E91E8 /* BookTourVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5D40F1FE55D03002E91E8 /* BookTourVc.swift */; };
+		EFD5D4121FE55D03002E91E8 /* BookTourVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFD5D4101FE55D03002E91E8 /* BookTourVc.xib */; };
 		EFD816911FDFBEEB004831EA /* BookedTourService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD816901FDFBEEB004831EA /* BookedTourService.swift */; };
 		EFD816941FDFC81C004831EA /* DetailPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD816921FDFC81C004831EA /* DetailPlaceVC.swift */; };
 		EFD816951FDFC81C004831EA /* DetailPlaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFD816931FDFC81C004831EA /* DetailPlaceVC.xib */; };
@@ -97,6 +100,7 @@
 		36287D5583BBE4723F4823DE /* Pods-Travel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel/Pods-Travel.release.xcconfig"; sourceTree = "<group>"; };
 		B33633D7EF9CFD10C2E77D96 /* Pods_Travel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC68E02E0AE822F6EFAC21B2 /* Pods-Travel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travel/Pods-Travel.debug.xcconfig"; sourceTree = "<group>"; };
+		EF0740371FE5705A0025D0C3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		EF0D7BD91FD96F29003EC340 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		EF0D7BDA1FD96F29003EC340 /* UIButtonExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		EF0D7BDB1FD96F29003EC340 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		EF7CDBAB1FDA47D500C22FAF /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		EFD2B8461FDB119900053279 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		EFD2B8481FDB130000053279 /* TourService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourService.swift; sourceTree = "<group>"; };
+		EFD5D40F1FE55D03002E91E8 /* BookTourVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTourVc.swift; sourceTree = "<group>"; };
+		EFD5D4101FE55D03002E91E8 /* BookTourVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTourVc.xib; sourceTree = "<group>"; };
 		EFD816901FDFBEEB004831EA /* BookedTourService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedTourService.swift; sourceTree = "<group>"; };
 		EFD816921FDFC81C004831EA /* DetailPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceVC.swift; sourceTree = "<group>"; };
 		EFD816931FDFC81C004831EA /* DetailPlaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPlaceVC.xib; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 				EF0D7BDB1FD96F29003EC340 /* UIViewControllerExt.swift */,
 				EF0D7BD91FD96F29003EC340 /* UIViewExt.swift */,
 				EF0D7C091FD9A222003EC340 /* UIViewController+Extension.swift */,
+				EF0740371FE5705A0025D0C3 /* UIImageViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -344,6 +351,7 @@
 				EF0D7C1C1FD9B15D003EC340 /* ExploreViewCell.swift */,
 				EF0D7C201FD9BAA8003EC340 /* DetailTourVC.swift */,
 				EFD816921FDFC81C004831EA /* DetailPlaceVC.swift */,
+				EFD5D40F1FE55D03002E91E8 /* BookTourVc.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -385,8 +393,8 @@
 		EF456FFD1FDF862700515B27 /* BookedTour */ = {
 			isa = PBXGroup;
 			children = (
-				EF456FFE1FDF865400515B27 /* BookedTourVC.swift */,
-				EF456FFF1FDF865400515B27 /* BookedTourVC.xib */,
+				EF9C64FF1FE55CDA00616502 /* BookTour */,
+				EF9C64FE1FE55CCE00616502 /* Show booked tour */,
 			);
 			path = BookedTour;
 			sourceTree = "<group>";
@@ -417,6 +425,23 @@
 				EFF1E9FC1FC59E2700CAB39B /* DetailAccountTVC.xib */,
 			);
 			path = SettingCell;
+			sourceTree = "<group>";
+		};
+		EF9C64FE1FE55CCE00616502 /* Show booked tour */ = {
+			isa = PBXGroup;
+			children = (
+				EF456FFE1FDF865400515B27 /* BookedTourVC.swift */,
+				EF456FFF1FDF865400515B27 /* BookedTourVC.xib */,
+			);
+			path = "Show booked tour";
+			sourceTree = "<group>";
+		};
+		EF9C64FF1FE55CDA00616502 /* BookTour */ = {
+			isa = PBXGroup;
+			children = (
+				EFD5D4101FE55D03002E91E8 /* BookTourVc.xib */,
+			);
+			path = BookTour;
 			sourceTree = "<group>";
 		};
 		EFD2B8451FDB117500053279 /* ApiManager */ = {
@@ -641,6 +666,7 @@
 				EF4FD8BE1FDE89C3004AE1C2 /* SearchTourViewController.xib in Resources */,
 				EF4FD8B31FDE775D004AE1C2 /* SearchCategoryCell.xib in Resources */,
 				EFDC0E811FAF1E6B00AC9257 /* Main.storyboard in Resources */,
+				EFD5D4121FE55D03002E91E8 /* BookTourVc.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,12 +732,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -730,6 +758,7 @@
 				EF7CDB9F1FDA3EB700C22FAF /* BookedTour.swift in Sources */,
 				EF0D7C081FD99CA0003EC340 /* Photo.swift in Sources */,
 				EF0D7BDC1FD96F29003EC340 /* UIViewExt.swift in Sources */,
+				EF0740381FE5705A0025D0C3 /* UIImageViewExtension.swift in Sources */,
 				EFD816911FDFBEEB004831EA /* BookedTourService.swift in Sources */,
 				EF7CDBA11FDA3F9600C22FAF /* Hotel.swift in Sources */,
 				EF0D7BF91FD99C2A003EC340 /* PlaceDataService.swift in Sources */,
@@ -744,6 +773,7 @@
 				EF0D7BE31FD96F6D003EC340 /* LoginVC.swift in Sources */,
 				EF0D7BE81FD9701A003EC340 /* SplashVC.swift in Sources */,
 				EF0D7BF81FD99C2A003EC340 /* UserDataService.swift in Sources */,
+				EFD5D4111FE55D03002E91E8 /* BookTourVc.swift in Sources */,
 				EF0D7C1E1FD9B15D003EC340 /* ExploreViewCell.swift in Sources */,
 				EF456FF71FDF7C7500515B27 /* FavoriteTourService.swift in Sources */,
 				EF4570001FDF865400515B27 /* BookedTourVC.swift in Sources */,

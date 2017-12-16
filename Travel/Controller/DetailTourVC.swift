@@ -9,6 +9,7 @@
 import UIKit
 import ImageSlideshow
 import SDWebImage
+import Toaster
 
 
 class DetailTourVC: UIViewController {
@@ -29,12 +30,15 @@ class DetailTourVC: UIViewController {
     @IBOutlet weak var btnBook: UIButton!
     @IBOutlet weak var viewContainFavor: UIView!
     @IBOutlet weak var viewContainBook: UIView!
+    @IBOutlet weak var imgHeart: UIImageView!
+    @IBOutlet weak var imgCart: UIImageView!
     
     
     var tour:Tour? = nil
     var place:PlaceTour? = nil
     var hotel:Hotel? = nil
     var trans:Transportation? = nil
+    var isFavorite:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +54,9 @@ class DetailTourVC: UIViewController {
         viewContainBook.layer.masksToBounds = true
         viewContainFavor.layer.cornerRadius = viewContainFavor.bounds.size.height/10
         viewContainFavor.layer.masksToBounds = true
+        
+        self.btnFavor.isUserInteractionEnabled = false
+        self.btnBook.isUserInteractionEnabled = false
         
     }
     func initData(){
@@ -93,7 +100,7 @@ class DetailTourVC: UIViewController {
             })
         }
         self.lbSeat.text = "Còn \((tour?.availableSeat)!) chỗ"
-        self.lbTime.text = "\((tour?.startDate)!)-\((tour?.finishDate)!)"
+        self.lbTime.text = "\((tour?.startDate)!)->\((tour?.finishDate)!)"
         self.lbMoney.text = "\((tour?.price)!) VNĐ"
         self.lbLocation.text = "\((tour?.title)!)"
         
@@ -104,6 +111,21 @@ class DetailTourVC: UIViewController {
         tapPlace.numberOfTapsRequired = 1
         tapPlace.numberOfTouchesRequired = 1
         lbLocation.addGestureRecognizer(tapPlace)
+        
+        
+        //set action for lbHotel
+        lbHotel.isUserInteractionEnabled = true
+        let tapHotel = UITapGestureRecognizer(target: self, action: #selector(tapLbHotel(sender:)))
+        tapHotel.numberOfTapsRequired = 1
+        tapHotel.numberOfTouchesRequired = 1
+        lbHotel.addGestureRecognizer(tapHotel)
+        
+        //set action for trans
+        lbTrans.isUserInteractionEnabled = true
+        let tapTrans = UITapGestureRecognizer(target: self, action: #selector(tapLbTrans(sender:)))
+        tapTrans.numberOfTapsRequired = 1
+        tapTrans.numberOfTouchesRequired = 1
+        lbTrans.addGestureRecognizer(tapTrans)
         
         
         let vote = (tour?.vote)!
@@ -151,20 +173,102 @@ class DetailTourVC: UIViewController {
             vote1.image = UIImage(named: "vote")
             break
         }
+        self.btnFavor.isUserInteractionEnabled = true
+        self.btnBook.isUserInteractionEnabled = true
+        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        let favoriteTourOfThisUser = appdelegate.favoriteTours
+        if favoriteTourOfThisUser.count != 0{
+            print("favorite tour available")
+            for item in favoriteTourOfThisUser{
+                if item.tourID == (self.tour?.tourID)!{
+                    self.imgHeart.image = UIImage(named: "heart_red")
+                    self.isFavorite = true
+                }
+            }
+        }
     }
     @objc func didTap() {
         slideShow.presentFullScreenController(from: self)
     }
-    @objc func tapLbLocation(sender:Any){
-        let placeDetail = DetailPlaceVC()
-        placeDetail.place = self.place
-        self.navigationController?.pushViewController(placeDetail, animated: true)
-    }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "Chi tiết"
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Did Tap in any label
+    @objc func tapLbLocation(sender:Any){
+        let placeDetail = DetailPlaceVC()
+        placeDetail.place = self.place
+        self.navigationController?.pushViewController(placeDetail, animated: true)
+    }
+    @objc func tapLbHotel(sender:Any){
+        let placeDetail = DetailPlaceVC()
+        placeDetail.hotel = self.hotel
+        self.navigationController?.pushViewController(placeDetail, animated: true)
+    }
+    @objc func tapLbTrans(sender:Any){
+        let placeDetail = DetailPlaceVC()
+        placeDetail.trans = self.trans
+        self.navigationController?.pushViewController(placeDetail, animated: true)
+    }
+    @IBAction func clickOnButtonFavorite(_ sender: Any) {
+        let userID = UserDefaults.standard.string(forKey: "userID")
+        if userID != nil{
+            if userID! != ""{
+                if !isFavorite{
+                    print("add favorite")
+                    self.btnFavor.isUserInteractionEnabled = false
+                    FavoriteTourService.share.setFavorite(userID: userID!, tourID: (self.tour?.tourID)!, completion: { (success) in
+                        if success {
+                            print("success")
+                            DispatchQueue.main.async {
+                                let toast = Toast(text: "Thêm vào yêu thích thành công", delay: 0, duration: 0.5)
+                                toast.show()
+                                let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                                appdelegate.getFavorTours()
+                                UIView.transition(with: self.imgHeart, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                                    self.imgHeart.image = UIImage(named: "heart_red")
+                                    self.btnFavor.isUserInteractionEnabled = true
+                                    self.isFavorite = true
+                                }, completion: nil)
+                            }
+                        }
+                    })
+                }else{
+                    //delete favorite
+                    print("delete favorite")
+                    self.btnFavor.isUserInteractionEnabled = false
+                    FavoriteTourService.share.deleteFavorite(userID: userID!, tourID: (self.tour?.tourID)!, completion: { (success) in
+                        if success{
+                            print("success")
+                            DispatchQueue.main.async {
+                                let toast = Toast(text: "Xóa yêu thích thành công", delay: 0, duration: 0.5)
+                                toast.show()
+                                let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                                appdelegate.getFavorTours()
+                                UIView.transition(with: self.imgHeart, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                                    self.imgHeart.image = UIImage(named: "heart")
+                                    self.btnFavor.isUserInteractionEnabled = true
+                                    self.isFavorite = false
+                                }, completion: nil)
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    }
+    @IBAction func clickOnButtonBook(_ sender: Any) {
+        let bookVc = BookTourVc()
+        bookVc.isFavorite = self.isFavorite
+        bookVc.tour = self.tour
+        self.navigationController?.pushViewController(bookVc, animated: true)
     }
 }

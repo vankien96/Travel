@@ -45,7 +45,7 @@ class FavoriteVC: UIViewController {
     @IBAction func clickOnBtnFavor(_ sender: Any) {
         if(lastpage == 1){
             btnFavor.backgroundColor = UIColor(red: 245/255.0, green: 147/255.0, blue: 48/255.0, alpha: 1)
-            btnBooked.backgroundColor = UIColor(red: 102/255.0, green: 138/255.0, blue: 67/255.0, alpha: 1)
+            btnBooked.backgroundColor = UIColor(red: 101/255.0, green: 187/255.0, blue: 127/255.0, alpha: 1)
             UIView.animate(withDuration: 0.25) {
                 self.mainScroll.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
             }
@@ -55,7 +55,7 @@ class FavoriteVC: UIViewController {
     @IBAction func clickOnBtnBooked(_ sender: Any) {
         if lastpage == 0{
             btnBooked.backgroundColor = UIColor(red: 245/255.0, green: 147/255.0, blue: 48/255.0, alpha: 1)
-            btnFavor.backgroundColor = UIColor(red: 102/255.0, green: 138/255.0, blue: 67/255.0, alpha: 1)
+            btnFavor.backgroundColor = UIColor(red: 101/255.0, green: 187/255.0, blue: 127/255.0, alpha: 1)
             UIView.animate(withDuration: 0.25) {
                 self.mainScroll.setContentOffset(CGPoint(x: UIScreen.main.bounds.width, y: 0), animated: true)
             }
@@ -69,10 +69,10 @@ extension FavoriteVC:UIScrollViewDelegate{
         let page = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width);
         if page == 0 {
             btnFavor.backgroundColor = UIColor(red: 245/255.0, green: 147/255.0, blue: 48/255.0, alpha: 1)
-            btnBooked.backgroundColor = UIColor(red: 102/255.0, green: 138/255.0, blue: 67/255.0, alpha: 1)
+            btnBooked.backgroundColor = UIColor(red: 101/255.0, green: 187/255.0, blue: 127/255.0, alpha: 1)
         }else{
             btnBooked.backgroundColor = UIColor(red: 245/255.0, green: 147/255.0, blue: 48/255.0, alpha: 1)
-            btnFavor.backgroundColor = UIColor(red: 102/255.0, green: 138/255.0, blue: 67/255.0, alpha: 1)
+            btnFavor.backgroundColor = UIColor(red: 101/255.0, green: 187/255.0, blue: 127/255.0, alpha: 1)
         }
         lastpage = page
     }

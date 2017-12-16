@@ -42,4 +42,70 @@ class BookedTourService{
         }
         task.resume()
     }
+    func setBookTour(userID:String,tourID:String,completion: @escaping ((Bool)->Void)){
+        let url = URL(string: API.API_SETBOOKTOUR)!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let postString = "userID=\(userID)&tourID=\(tourID)"
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(false)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("error HTTP")
+                completion(false)
+            }
+            do{
+                print("OK")
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:Any]
+                print(jsonResult)
+                let success = jsonResult["return"] as! String
+                if success == "true"{
+                    completion(true)
+                }else{
+                    completion(false)
+                }
+            }catch{
+                completion(false)
+            }
+        }
+        task.resume()
+    }
+    func deleteBookTour(userID:String,tourID:String,completion: @escaping ((Bool)->Void)){
+        let url = URL(string: API.API_DELETEBOOKTOUR)!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let postString = "userID=\(userID)&tourID=\(tourID)"
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(false)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("error HTTP")
+                completion(false)
+            }
+            do{
+                print("OK")
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:Any]
+                print(jsonResult)
+                let success = jsonResult["return"] as! String
+                if success == "true"{
+                    completion(true)
+                }else{
+                    completion(false)
+                }
+            }catch{
+                completion(false)
+            }
+        }
+        task.resume()
+    }
 }

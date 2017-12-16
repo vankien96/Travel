@@ -171,7 +171,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqY-uI-gg2">
                                 <rect key="frame" x="160" y="64" width="160" height="40"/>
-                                <color key="backgroundColor" red="0.40194195510000003" green="0.53989988570000003" blue="0.26145994659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.396078431372549" green="0.73489862680435181" blue="0.49988007545471191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QRL-dX-E8O"/>
                                 </constraints>
@@ -221,7 +221,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" red="0.95572763679999995" green="0.56928622719999999" blue="0.18710073830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.3943963647" green="0.73489862679999995" blue="0.49988007550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="XN6-He-S7m" kind="relationship" relationship="viewControllers" id="PX2-md-M6V"/>

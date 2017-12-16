@@ -6,17 +6,20 @@ PODS:
   - SDWebImage (4.2.2):
     - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
+  - Toaster (2.1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - ImageSlideshow (~> 1.4)
   - SDWebImage (~> 4.0)
+  - Toaster
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   ImageSlideshow: 1bb0e610e28a71e8936d57265d882f61714a470b
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: 3862c9256847af039c8075b020dd6270f823b998
+PODFILE CHECKSUM: beaf3b89d7183345d29d509df2fc417897e06e29
 
 COCOAPODS: 1.3.1

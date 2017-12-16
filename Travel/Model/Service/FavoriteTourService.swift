@@ -22,7 +22,6 @@ class FavoriteTourService{
                 print(success)
                 if success == "true"{
                     let favoriteTours = jsonResult["message"] as! [Any]
-                    print(favoriteTours)
                     var allFavorTours:[FavoriteTour] = []
                     for item in favoriteTours{
                         let favor = item as! [String:Any]
@@ -37,6 +36,74 @@ class FavoriteTourService{
                 }
             }catch{
                 completion(false,[])
+            }
+        }
+        task.resume()
+    }
+    func setFavorite(userID:String,tourID:String,completion: @escaping ((Bool)->Void)){
+        let url = URL(string: API.API_SETFAVORITE)!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let postString = "userID=\(userID)&tourID=\(tourID)"
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription)
+                completion(false)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("error HTTP")
+                completion(false)
+            }
+            do{
+                print("OK")
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:Any]
+                print(jsonResult)
+                let success = jsonResult["return"] as! String
+                if success == "true"{
+                    completion(true)
+                }else{
+                    completion(false)
+                }
+            }catch{
+                completion(false)
+            }
+        }
+        task.resume()
+    }
+    func deleteFavorite(userID:String,tourID:String,completion: @escaping ((Bool)->Void)){
+        let url = URL(string: API.API_DELETEFAVORITE)!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let postString = "userID=\(userID)&tourID=\(tourID)"
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription)
+                completion(false)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("error HTTP")
+                completion(false)
+            }
+            do{
+                print("OK")
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:Any]
+                print(jsonResult)
+                let success = jsonResult["return"] as! String
+                if success == "true"{
+                    completion(true)
+                }else{
+                    completion(false)
+                }
+            }catch{
+                completion(false)
             }
         }
         task.resume()

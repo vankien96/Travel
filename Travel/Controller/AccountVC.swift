@@ -119,6 +119,8 @@ extension AccountVC:LoginDelegate{
     func loginSuccess(user: User) {
         self.userCurrent = user
         self.tbvAccount.reloadData()
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.getFavorTours()
     }
 }
 extension AccountVC:LogOutDelegate{

@@ -46,7 +46,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQy-Gs-Nn7">
                             <rect key="frame" x="110.5" y="80" width="100" height="100"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="4lx-DN-ovg">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar-1" translatesAutoresizingMaskIntoConstraints="NO" id="4lx-DN-ovg">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yC3-cJ-anO">
@@ -244,8 +244,8 @@
         </view>
     </objects>
     <resources>
+        <image name="Avatar-1" width="116" height="116"/>
         <image name="BluredPhoto" width="375" height="185"/>
         <image name="EditPhotoBTN" width="29" height="29"/>
-        <image name="avatar" width="50" height="50"/>
     </resources>
 </document>

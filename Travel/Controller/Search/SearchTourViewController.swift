@@ -170,9 +170,20 @@ extension SearchTourViewController:UICollectionViewDelegate,UICollectionViewDele
         }
         if textCheck == "Place"{
             let placeDetail = DetailPlaceVC()
-            placeDetail.place = places?[indexPath.item]
+            placeDetail.place = placesResult[indexPath.item]
             self.navigationController?.pushViewController(placeDetail, animated: true)
         }
+        if textCheck == "Hotel"{
+            let placeDetail = DetailPlaceVC()
+            placeDetail.hotel = hotelsResult[indexPath.item]
+            self.navigationController?.pushViewController(placeDetail, animated: true)
+        }
+        if textCheck == "Trans"{
+            let placeDetail = DetailPlaceVC()
+            placeDetail.trans = transResult[indexPath.item]
+            self.navigationController?.pushViewController(placeDetail, animated: true)
+        }
+        
     }
 }
 extension SearchTourViewController:UICollectionViewDataSource{

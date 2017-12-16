@@ -65,9 +65,11 @@ extension FavorTourVC:UICollectionViewDelegate,UICollectionViewDelegateFlowLayou
         return CGSize(width: self.view.bounds.width-32, height: 150)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let tourDetail = DetailTourVC()
-        tourDetail.tour = tours[indexPath.item]
-        self.navigationController?.pushViewController(tourDetail, animated: true)
+        if tours.count > indexPath.item{
+            let tourDetail = DetailTourVC()
+            tourDetail.tour = tours[indexPath.item]
+            self.navigationController?.pushViewController(tourDetail, animated: true)
+        }
     }
 }
 extension FavorTourVC:UICollectionViewDataSource{
